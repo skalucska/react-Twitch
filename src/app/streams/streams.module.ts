@@ -8,6 +8,7 @@ import {SharedModule} from '../shared/shared.module';
 import { StreamVideoComponent } from './containers/stream-video/stream-video.component';
 import { VideoPlayerComponent } from './components/video-player/video-player.component';
 import { ChatRoomComponent } from './components/chat-room/chat-room.component';
+import {LayoutModule} from '../layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -20,11 +21,12 @@ import { ChatRoomComponent } from './components/chat-room/chat-room.component';
   exports: [
     StreamCardComponent
   ],
-  imports: [
-    CommonModule,
-    StreamsRoutingModule,
-    SharedModule
-  ]
+    imports: [
+        CommonModule,
+        StreamsRoutingModule,
+        SharedModule,
+        LayoutModule
+    ]
 })
 export class StreamsModule {
 }

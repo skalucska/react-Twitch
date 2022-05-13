@@ -1,4 +1,7 @@
 import {Component} from '@angular/core';
+import {Observable} from 'rxjs';
+import {Stream} from '../../models/stream';
+import {StreamsService} from '../../services/streams.service';
 
 @Component({
   selector: 'app-streams',
@@ -6,5 +9,12 @@ import {Component} from '@angular/core';
   styleUrls: ['./streams.component.scss']
 })
 export class StreamsComponent {
-  // TODO
+  stream$: Observable<Stream[]>;
+
+  constructor(private streamsService: StreamsService) {
+  }
+
+  ngOnInit(): void {
+    this.stream$ = this.streamsService.getStreams(100);
+  }
 }

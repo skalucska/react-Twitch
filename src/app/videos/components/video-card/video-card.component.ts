@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Clip} from '../../../clips/models/clip';
+import {Video} from '../../models/video';
 
 @Component({
   selector: 'app-video-card',
@@ -6,5 +8,5 @@ import {Component} from '@angular/core';
   styleUrls: ['./video-card.component.scss']
 })
 export class VideoCardComponent {
-  // TODO
+  @Input() video: Video;
 }

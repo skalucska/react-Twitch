@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
-import {Stream} from '../../../streams/models/stream';
 import {Game} from '../../models/game';
 import {ActivatedRoute} from '@angular/router';
-import {StreamsService} from '../../../streams/services/streams.service';
 import {GamesService} from '../../services/games.service';
-import {switchMap} from 'rxjs/operators';
+import {pluck, switchMap} from 'rxjs/operators';
 import {Video} from '../../../videos/models/video';
 import {VideosService} from '../../../videos/services/videos.service';
 
@@ -15,6 +13,17 @@ import {VideosService} from '../../../videos/services/videos.service';
   styleUrls: ['./game-videos.component.scss']
 })
 export class GameVideosComponent {
+  currentGame$: Observable<Game>;
+  video$: Observable<Video[]>;
 
+  constructor(private activatedRoute: ActivatedRoute, private videosService: VideosService, private gamesService: GamesService) {
+  }
+
+  ngOnInit(): void {
+    const gameId$ = this.activatedRoute.params.pipe(pluck('gameId'));
+
+    this.currentGame$ = this.gamesService.getGameById$(gameId$);
+    this.video$ = this.videosService.getVideosByGameId$(gameId$);
+  }
 
 }

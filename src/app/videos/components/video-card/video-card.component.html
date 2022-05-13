@@ -1,1 +1,7 @@
 <!--A vous de jouer!-->
+<div class="card" role="button" [routerLink]="['/videos', video.id, 'video']">
+  <img [src]="video.thumbnail_url | sizedImage: '285': '380'" class="card-img p-2" [alt]="video.title">
+  <div class="card-body py-2">
+    <h6 class="card-title">{{video.title}}</h6>
+  </div>
+</div>
