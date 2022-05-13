@@ -1,0 +1,8 @@
+<!--A vous de jouer!-->
+<div class="card" role="button" [routerLink]="['/clips', clip.id, 'clips']">
+    <img [src]="clip.thumbnail_url | sizedImage: '285': '380'" class="card-img p-2" [alt]="clip.title">
+    <div class="card-body py-2">
+      <h6 class="card-title">{{clip.title}}</h6>
+    </div>
+  </div>
+  

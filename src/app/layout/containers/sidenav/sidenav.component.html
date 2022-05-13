@@ -1,0 +1,11 @@
+<div class="mt-4">
+  <div *ngFor="let stream of streams$ | async" class="row col-12 align-items-center px-0 mx-0 my-1">
+    <div>
+      <a [routerLink]="['/streams', stream.user_name]">
+        <img [src]="stream.thumbnail_url | sizedImage:'30': '30'" class="rounded-circle" [title]="stream.title">
+      </a>
+    </div>
+    <a [routerLink]="['/streams', stream.user_name]" class="d-none d-lg-block float-left col m-0 text-truncate">{{stream.user_name}}</a>
+    <div class="d-none d-lg-block col-3 badge badge-info">{{stream.viewer_count | viewerCount}}</div>
+  </div>
+</div>

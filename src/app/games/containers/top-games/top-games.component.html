@@ -1,0 +1,26 @@
+<div class="d-flex col-12 p-0">
+  <app-sidenav class="col-2 col-sm-1 col-lg-3"></app-sidenav>
+  <div class="col-10 col-sm-11 col-lg-9">
+    <div class="row pt-3">
+      <div class="col-12">
+
+        <h1>Browse</h1>
+
+        <ul class="nav nav-tabs mb-3">
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/games/top" routerLinkActive="active">Categories (top games)</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/streams" routerLinkActive="active">Live channels (streams)</a>
+          </li>
+        </ul>
+
+        <div class="row">
+          <app-game-card class="pt-2 col-6 col-md-4 col-lg-3 col-xl-2" *ngFor="let topGame of topGames$ | async" [game]="topGame"></app-game-card>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

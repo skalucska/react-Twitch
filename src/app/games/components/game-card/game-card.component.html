@@ -1,0 +1,6 @@
+<div class="card" role="button" [routerLink]="['/games', game.id, 'streams']">
+  <img [src]="game.box_art_url | sizedImage: '285': '380'" class="card-img p-2" [alt]="game.name">
+  <div class="card-body py-2">
+    <h6 class="card-title">{{game.name}}</h6>
+  </div>
+</div>

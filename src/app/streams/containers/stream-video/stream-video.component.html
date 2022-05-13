@@ -1,0 +1,23 @@
+<ng-container *ngIf="stream$ | async as stream else loading">
+  <div class="row">
+    <div class="col-12">
+      <h5 class="mt-4">{{stream.title}}</h5>
+    </div>
+    <div class="col-12">
+      <h6>{{stream.user_name}}</h6>
+    </div>
+
+    <div class="row col-12 no-gutters">
+      <app-video-player class="col-12 col-lg" [userName]="stream.user_name"></app-video-player>
+      <!--
+      Activable uniquement sur un vrai serveur
+      <app-chat-room class="col-12 col-lg-4" [userName]="stream.user_name"></app-chat-room>
+      -->
+    </div>
+  </div>
+
+</ng-container>
+
+<ng-template #loading>
+  Loading video...
+</ng-template>

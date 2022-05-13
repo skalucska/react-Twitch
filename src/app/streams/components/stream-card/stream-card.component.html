@@ -1,0 +1,7 @@
+<div class="card" role="button" [routerLink]="['/streams', stream.user_name]">
+  <img [src]="stream.thumbnail_url | sizedImage: '440': '248'" class="card-img p-2" [alt]="stream.title">
+  <div class="card-body py-2">
+    <h6 class="card-title text-truncate" [title]="stream.title">{{stream.title}}</h6>
+    <p>{{stream.viewer_count | viewerCount}} viewers</p>
+  </div>
+</div>
