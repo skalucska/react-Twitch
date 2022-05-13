@@ -10,7 +10,7 @@ import { ClipsService } from '../../services/clips.service';
 })
 export class ClipsComponent implements OnInit {
   clips$ : Observable<Clip[]>;
-  constructor(private clipsService : ClipsService) { 
+  constructor(private clipsService : ClipsService) {
 
   }
 

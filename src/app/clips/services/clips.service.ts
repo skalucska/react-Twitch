@@ -20,5 +20,13 @@ export class ClipsService {
   getClipByGameId(gameId: number): Observable<Clip[]> {
     return this.twitchService.getAll<Clip>(`/clips?game_id=${gameId}`);
   }
- 
+
+  getClipById(clipId: number): Observable<Clip> {
+    return this.twitchService.getOne<Clip>(`/clips?id=${clipId}`);
+  }
+
+  getClipById$(id$: Observable<number>): Observable<Clip> {
+    return id$.pipe(switchMap(id => this.getClipById(id)));
+  }
+
 }

@@ -11,7 +11,7 @@ export class VideoCLipComponent implements OnChanges {
   url: string;
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.url = environment.twitch.videoPlayerUrl.replace('[VIDEOID]', changes.videoId.currentValue);
+    this.url = environment.twitch.videoClipUrl.replace('[VIDEOID]', changes.videoId.currentValue);
     console.log('this.url', this.url);
   }
 }

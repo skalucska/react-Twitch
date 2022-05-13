@@ -14,6 +14,7 @@ export const environment = {
   api: {...apiConfig, ...oAuthConfig},
   twitch: {
     videoPlayerUrl: 'http://player.twitch.tv/?channel=[USERNAME]&parent=localhost',
+    videoClipUrl: 'https://clips.twitch.tv/embed?clip=[VIDEOID]&parent=localhost',
     chatRoomUrl: 'https://www.twitch.tv/embed/[USERNAME]/chat',
   }
 };
